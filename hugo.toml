@@ -1,0 +1,14 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'My New Hugo Site'
+theme = 'ananke'
+
+[deployment]
+
+[[deployment.targets]]
+# An arbitrary name for this target.
+name = "production"
+
+
+# Google Cloud Storage -- see https://gocloud.dev/howto/blob/#gcs
+URL = "gs://super_bucket_999"
