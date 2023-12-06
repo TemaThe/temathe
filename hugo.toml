@@ -12,3 +12,28 @@ name = "production"
 
 # Google Cloud Storage -- see https://gocloud.dev/howto/blob/#gcs
 URL = "gs://super_bucket_999"
+
+[[menu.main]]
+name = "Documentation"
+pageRef = "/docs"
+weight = 1
+
+[[menu.main]]
+name = "Blog"
+pageRef = "/blog"
+weight = 2
+
+[[menu.main]]
+name = "Search"
+weight = 4
+
+[menu.main.params]
+type = "search"
+
+[[menu.main]]
+name = "GitHub"
+weight = 5
+url = "https://github.com/imfing/hextra"
+
+[menu.main.params]
+icon = "github"
