@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "main.css",
-	"sourceRoot": "/home/art/quickstart",
+	"sourceRoot": "/home/art/art_dev/temathe",
 	"sources": [
 		"ananke/css/main.css"
 	],
