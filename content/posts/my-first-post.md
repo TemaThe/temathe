@@ -8,6 +8,3 @@ draft = false
 This is **bold** text, and this is *emphasized* text.
 
 Visit the [Hugo](https://gohugo.io) website!
-TTTT
-OEUOEU
-ТЫ УМРЕШЬ ЧЕРЕЗ 7 ДНЕЙ
