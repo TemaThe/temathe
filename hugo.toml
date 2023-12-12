@@ -1,39 +1,144 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
 title = 'Artem Smirnov Blog'
-theme = 'hextra'
+theme = 'dark-theme-editor'
 
-[deployment]
+# Recommend syntax hilight config
+[markup]
+[markup.highlight]
+lineNoStart = 1
+lineNos = true
+style = "native"
+tabWidth = 4
 
-[[deployment.targets]]
-# An arbitrary name for this target.
-name = "production"
+[markup.goldmark.renderer]
+unsafe = true
 
+# Merge the taxonomies config from theme to site configuration
+[taxonomies]
+_merge = 'deep'
 
-# Google Cloud Storage -- see https://gocloud.dev/howto/blob/#gcs
-URL = "gs://super_bucket_999"
+# Theme parameter
+[params]
 
-[[menu.main]]
-name = "Documentation"
-pageRef = "/docs"
+# Parameters applied in HTML <head>
+[params.site]
+# Website ICON
+faviconUrl = ""
+
+# Customized info shown in header of the page
+[params.header]
+
+# Config about your's site logo, remove this item to hide the logo
+[params.header.logo]
+# Where is your site's URL
+imgUrl = ""
+
+# Customized info shown in footer of the page
+[params.footer]
+# Social link in the footer, listed items are supported, delete unwanted items to hide it.
+[params.footer.socialLink]
+github = "https://github.com/temathe"
+email = "tema812@gmail.com"
+
+# Parameters applied in the homepage only
+[params.homePage]
+
+# Parameter to decide whether to show the URL behind the title.
+# It will be more like an editor if it is shown. However, in general, it can be messy if it is displayed.
+# (Default: true)
+recentPostShowUrl = false
+
+# Multilingual Setting
+[languages]
+
+[languages.en]
+
+# hugo multilingual setting
+languageCode = 'en-US'
+languageDirection = 'ltr'
+languageName = 'English'
 weight = 1
 
-[[menu.main]]
-name = "Blog"
-pageRef = "/blog"
-weight = 2
+# Configs that were originally in the "params" section but need to be translated.
+[languages.en.params]
 
-[[menu.main]]
-name = "Search"
-weight = 4
+[languages.en.params.header]
+# Website title for header banner.
+title = "Welcome to my knowledge base"
 
-[menu.main.params]
-type = "search"
+# Subtitle for this site, used in homepage only
+subtitle = "Artem Smirnov Knowledge Base"
 
-[[menu.main]]
-name = "GitHub"
-weight = 5
-url = "https://github.com/imfing/hextra"
+[languages.en.params.footer]
+# CopyRight string shown in the footer. Keep it an empty string or remove this item will hide it from the page.
+copyrightStr = "All Rights Reserved ®."
 
-[menu.main.params]
-icon = "github"
+# Metadata of the site, value will be used in HTML <header>
+# These value would be used when they didn't appear in the frontmatter of a single page.
+# In other words, these value will be overwritten by the frontmatter in the single page.
+[languages.en.params.globalFrontmatter]
+# The author of this site. This will be shown in
+# 1. the footer of all page
+# 2. the author filed in the single page. (this could be overwritten by the frontmatter of the single page.)
+# Keep it an empty string or remove this item will hide it from the page
+author = "Artem Smirnov"
+
+# Website description for RSS and SEO. Theme will generate a <meta> tag for this item
+description = "Artem Smirnov QA Personal Site"
+
+# Website keywords. Theme will generate a <meta> tag for this item.
+keywords = "qa,testing,quality,automation"
+
+[languages.en.params.homePage]
+
+# Long Descripition shown in home page "Start Block". Is is recommended to have the paragraph shorter than 100 words.
+siteLongDescription = "The \"dark-theme-editor\" is a Hugo theme that resembles a code editor in dark mode, suitable for developers and programmers. The customizable dark color scheme provides a modern and professional appearance and may alleviate eye strain. Overall, it's a practical and visually appealing theme for creating a distinctive website."
+
+# Spracheinstellung für Deutsch
+[languages.ru]
+
+languageCode = 'ru-RU'
+languageDirection = 'ltr'
+languageName = 'Russian'
+title = 'Лютая База'
+weight = 3
+
+# Konfigurationen, die ursprünglich im Abschnitt "params" waren, aber übersetzt werden müssen.
+[languages.ru.params]
+
+[languages.ru.params.header]
+# Website-Titel für das Kopfzeilen-Banner.
+title = "Тут че то наверху"
+
+# Untertitel für diese Website, nur auf der Startseite verwendet
+subtitle = "Субтайтл"
+
+[languages.ru.params.footer]
+# Copyright-Text, der im Footer angezeigt wird. Lassen Sie ihn leer oder entfernen Sie diesen Eintrag, um ihn von der Seite auszublenden.
+copyrightStr = "Использовать на свой страх и риск"
+
+# Metadaten der Website, der Wert wird im HTML-<header> verwendet
+# Diese Werte werden verwendet, wenn sie nicht im Frontmatter einer einzelnen Seite erscheinen.
+# Mit anderen Worten, diese Werte werden durch das Frontmatter auf der einzelnen Seite überschrieben.
+[languages.ru.params.globalFrontmatter]
+# Der Autor dieser Website. Dies wird angezeigt in
+# 1. im Footer auf allen Seiten
+# 2. im Autorfeld auf der einzelnen Seite. (kann durch das Frontmatter der einzelnen Seite überschrieben werden.)
+# Lassen Sie ihn leer oder entfernen Sie diesen Eintrag, um ihn von der Seite auszublenden.
+author = "Артем Смирнов"
+
+# Website-Beschreibung für RSS und SEO. Das Theme generiert ein <meta>-Tag für diesen Wert.
+description = "Beispielwebsite des Dunkel-Theme-Editors"
+
+# Website-Schlüsselwörter. Das Theme generiert ein <meta>-Tag für diesen Wert.
+keywords = "качество,тестирование,theme,beispiel"
+
+[languages.ru.params.homePage]
+
+# Lange Beschreibung, die im "Startblock" der Startseite angezeigt wird. Es wird empfohlen, den Absatz kürzer als 100 Wörter zu halten.
+siteLongDescription = "Длинное описание сайта"
+
+# Wenn Ihnen der Titel von "siteLongDescription" nicht gefällt, der standardmäßig "Start" ist,
+# können Sie den Wert dieses Elements in "Beschreibung" oder etwas ähnliches ändern, das Ihnen gefällt.
+siteLongDescriptionTitle = "Начало"
